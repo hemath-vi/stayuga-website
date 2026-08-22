@@ -80,7 +80,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. OUR STAYS SECTION (60% #EFE3D5, 30% #48182E/#957082, 10% #C49C79) */}
+      {/* 2. OUR STAYS SECTION */}
       <section className="py-24 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mb-12 items-start">
           <div>
@@ -144,7 +144,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. OUR EVENTS SECTION (30% #48182E, 60% #281822 canvas, 10% #C49C79) */}
+      {/* 3. OUR EVENTS SECTION */}
       <section className="bg-[#281822] text-[#EFE3D5] py-20 border-y border-[#48182E]">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
