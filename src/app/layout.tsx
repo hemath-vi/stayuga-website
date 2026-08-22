@@ -20,17 +20,17 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Stayuga — Curated Luxury Villas & Farmhouses",
+    default: "Stayuga | Curated Luxury Villas & Farmhouses",
     template: "%s | Stayuga",
   },
   description:
-    "Stayuga curates handpicked luxury villas and farmhouses for soulful stays, celebrations, and retreats across India.",
+    "Handpicked luxury villas and farmhouses for stays, celebrations, and retreats across India.",
   openGraph: {
     type: "website",
     siteName: "Stayuga",
-    title: "Stayuga — Curated Luxury Villas & Farmhouses",
+    title: "Stayuga | Curated Luxury Villas & Farmhouses",
     description:
-      "Stayuga curates handpicked luxury villas and farmhouses for soulful stays, celebrations, and retreats across India.",
+      "Handpicked luxury villas and farmhouses for stays, celebrations, and retreats across India.",
   },
 };
 

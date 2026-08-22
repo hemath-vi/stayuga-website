@@ -3,95 +3,101 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
+import { Logo } from "@/components/ui/Logo";
+import { LinkButton } from "@/components/ui/Button";
+
+const NAV = [
+  { href: "/properties", label: "Stays" },
+  { href: "/experiences", label: "Experiences" },
+  { href: "/services", label: "Services" },
+  { href: "/events", label: "Events" },
+  { href: "/about", label: "About" },
+];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
+  const transparent = isHomePage && !scrolled && !open;
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 40);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isHomePage
-          ? scrolled
-            ? "bg-[#181113] shadow-md py-4"
-            : "bg-black/25 backdrop-blur-md border-b border-white/10 py-5"
-          : "bg-[#181113] shadow-md py-4 border-b border-white/5"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
+        transparent
+          ? "bg-transparent"
+          : "border-b border-cream/10 bg-ink shadow-sm"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        {/* Brand Logo & Name */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-8 h-8 rounded-full border border-[#c5a880] flex items-center justify-center text-[#e2c7a9] group-hover:scale-105 transition-transform">
-            <span className="font-serif font-semibold text-sm">S</span>
-          </div>
-          <span className="text-xl md:text-2xl font-serif tracking-widest text-[#e2c7a9] uppercase font-light">
-            STAYUGA
-          </span>
-        </Link>
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 sm:px-8 lg:h-[72px] lg:px-12">
+        <Logo className="text-cream" />
 
-        {/* Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          <Link
-            href="/properties"
-            className={`text-xs uppercase tracking-widest transition-colors ${
-              pathname.startsWith("/properties")
-                ? "text-[#e2c7a9] font-medium"
-                : "text-white/80 hover:text-[#e2c7a9]"
-            }`}
-          >
-            Stays
-          </Link>
-          <Link
-            href="/services"
-            className={`text-xs uppercase tracking-widest transition-colors ${
-              pathname === "/services"
-                ? "text-[#e2c7a9] font-medium"
-                : "text-white/80 hover:text-[#e2c7a9]"
-            }`}
-          >
-            Services
-          </Link>
-          <Link
-            href="/events"
-            className={`text-xs uppercase tracking-widest transition-colors ${
-              pathname === "/events"
-                ? "text-[#e2c7a9] font-medium"
-                : "text-white/80 hover:text-[#e2c7a9]"
-            }`}
-          >
-            Events
-          </Link>
-          <Link
-            href="/about"
-            className={`text-xs uppercase tracking-widest transition-colors ${
-              pathname === "/about"
-                ? "text-[#e2c7a9] font-medium"
-                : "text-white/80 hover:text-[#e2c7a9]"
-            }`}
-          >
-            About
-          </Link>
+        <nav className="hidden items-center gap-8 lg:flex">
+          {NAV.map((item) => {
+            const active = item.href === "/properties" ? pathname.startsWith(item.href) : pathname === item.href;
+            return (
+              <Link
+                key={item.href}
+                href={item.href}
+                className={`text-xs uppercase tracking-[0.15em] transition-colors ${
+                  active ? "text-gold" : "text-cream/75 hover:text-gold-light"
+                }`}
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
-        {/* Action Button */}
-        <div>
-          <Link
-            href="/properties"
-            className="border border-[#c5a880] text-[#e2c7a9] px-6 py-2 rounded-full text-xs tracking-widest uppercase hover:bg-[#c5a880] hover:text-[#181113] active:scale-95 transition-all"
-          >
-            Book Now
-          </Link>
+        <div className="hidden lg:block">
+          <LinkButton href="/properties" variant="gold" className="px-6 py-2.5 text-xs">
+            Book now
+          </LinkButton>
         </div>
+
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
+          className="text-cream lg:hidden"
+        >
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </div>
+
+      {open && (
+        <div className="border-t border-cream/10 bg-ink px-6 py-6 lg:hidden">
+          <nav className="flex flex-col gap-5">
+            {NAV.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="text-sm uppercase tracking-[0.15em] text-cream/85 hover:text-gold-light"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+          <LinkButton
+            href="/properties"
+            variant="gold"
+            className="mt-6 w-full"
+            onClick={() => setOpen(false)}
+          >
+            Book now
+          </LinkButton>
+        </div>
+      )}
     </header>
   );
 }

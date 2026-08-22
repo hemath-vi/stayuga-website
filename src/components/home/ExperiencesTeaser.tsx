@@ -11,7 +11,7 @@ export function ExperiencesTeaser({ experiences }: { experiences: Experience[] }
     <section className="py-24">
       <Container>
         <div className="flex flex-wrap items-end justify-between gap-6">
-          <SectionHeading eyebrow="Experiences" title="Retreats, events &amp; celebrations" />
+          <SectionHeading title="Retreats, events &amp; celebrations" />
           <LinkButton href="/experiences" variant="outline">
             View all experiences
           </LinkButton>

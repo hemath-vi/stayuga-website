@@ -10,8 +10,7 @@ export function CtaSection() {
             Ready to plan your escape?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-ink-soft">
-            Tell us your dates and headcount — our team will help you find the right villa or
-            farmhouse and take care of the rest.
+            Tell us your dates and headcount, and we&apos;ll take care of the rest.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <LinkButton href="/properties" variant="primary">

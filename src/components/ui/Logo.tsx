@@ -1,22 +1,13 @@
 import Link from "next/link";
-import Image from "next/image";
+import clsx from "clsx";
 
-interface LogoProps {
-  className?: string;
-  width?: number;
-  height?: number;
-}
-
-export function Logo({ className = "", width = 120, height = 36 }: LogoProps) {
+export function Logo({ className }: { className?: string }) {
   return (
-    <Link href="/" className={`inline-flex items-center ${className}`}>
-      <Image
-        src="/logo.svg"
-        alt="Stayuga Logo"
-        width={width}
-        height={height}
-        priority
-      />
+    <Link href="/" className={clsx("inline-flex items-center gap-3", className)}>
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-current font-display text-sm">
+        S
+      </span>
+      <span className="font-display text-lg uppercase tracking-[0.25em]">Stayuga</span>
     </Link>
   );
 }

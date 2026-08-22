@@ -46,7 +46,7 @@ export function ContactForm() {
       <div className="rounded-2xl border border-forest/20 bg-forest/5 p-8 text-center">
         <p className="font-display text-xl text-forest">Message sent</p>
         <p className="mt-2 text-sm text-ink-soft">
-          Thanks for reaching out — our team will get back to you within a day.
+          Thanks for reaching out. Our team will get back to you within a day.
         </p>
         <button
           onClick={() => setStatus("idle")}

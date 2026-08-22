@@ -90,7 +90,7 @@ export function BookingInquiryForm({
       <div className="rounded-2xl border border-forest/20 bg-forest/5 p-6 text-center">
         <p className="font-display text-lg text-forest">Enquiry sent</p>
         <p className="mt-2 text-sm text-ink-soft">
-          Thank you — our team will get back to you shortly to confirm availability.
+          Thank you. Our team will get back to you shortly to confirm availability.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -135,14 +135,14 @@ export function BookingInquiryForm({
 
       <Textarea
         label="Message (optional)"
-        placeholder="Tell us about your stay — occasion, preferences, anything else."
+        placeholder="Tell us about your stay: occasion, preferences, anything else."
         {...register("message")}
       />
 
       {/* Additional services */}
       <div>
         <p className="mb-1 text-sm font-medium text-ink">Additional services</p>
-        <p className="mb-3 text-xs text-ink-soft">Select everything you'd like us to arrange — optional.</p>
+        <p className="mb-3 text-xs text-ink-soft">Optional, select as many as you like.</p>
         <div className="flex flex-wrap gap-2">
           {SERVICES.map((service) => {
             const selected = (values.additionalServices ?? []).includes(service);

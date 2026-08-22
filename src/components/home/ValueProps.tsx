@@ -29,7 +29,7 @@ export function ValueProps() {
   return (
     <section className="py-24">
       <Container>
-        <SectionHeading eyebrow="Why Stayuga" title="Hospitality, considered" align="center" />
+        <SectionHeading title="Hospitality, considered" align="center" />
         <div className="mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {VALUES.map(({ icon: Icon, title, description }) => (
             <div key={title} className="text-center">

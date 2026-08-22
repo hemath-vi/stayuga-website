@@ -4,7 +4,7 @@ import { Testimonial } from "@/lib/types";
 
 const DEFAULTS: Omit<Testimonial, "_id" | "order">[] = [
   {
-    quote: "Every detail felt considered — from the welcome hamper to the sunset views. It didn't feel like a rental, it felt like a home we'd always had.",
+    quote: "Every detail felt considered, from the welcome hamper to the sunset views. It felt like a home we'd always had.",
     author: "Ritika & Arjun",
     context: "Ananta Villa, Kasauli",
   },
@@ -26,15 +26,16 @@ export function Testimonials({ testimonials }: { testimonials?: Testimonial[] })
   return (
     <section className="bg-forest py-24">
       <Container>
-        <SectionHeading eyebrow="Guest stories" title="What our guests remember" align="center" light />
+        <SectionHeading title="What our guests remember" align="center" light />
         <div className="mt-14 grid grid-cols-1 gap-8 md:grid-cols-3">
           {items.map((t, i) => (
             <figure key={"_id" in t ? (t as Testimonial)._id : i} className="rounded-2xl border border-cream/10 bg-cream/5 p-8">
               <blockquote className="font-display text-lg leading-relaxed text-cream/90">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
-              <figcaption className="mt-6 text-sm text-gold-light">
-                {t.author} <span className="text-cream/50">— {t.context}</span>
+              <figcaption className="mt-6">
+                <p className="text-sm font-medium text-gold-light">{t.author}</p>
+                <p className="text-xs text-cream/50">{t.context}</p>
               </figcaption>
             </figure>
           ))}

@@ -24,7 +24,7 @@ export default async function ContactPage() {
         <SectionHeading
           eyebrow="Get in touch"
           title="We'd love to help you plan your stay"
-          description="Share a few details and our team will respond within a day — or reach us directly below."
+          description="Share a few details, or reach us directly below."
         />
 
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-3">

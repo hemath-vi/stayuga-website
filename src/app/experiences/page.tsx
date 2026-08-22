@@ -23,7 +23,7 @@ export default async function ExperiencesPage() {
         />
         {experiences.length === 0 ? (
           <p className="mt-16 text-center text-ink-soft">
-            No experiences are live yet — check back soon.
+            No experiences are live yet. Check back soon.
           </p>
         ) : (
           <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
