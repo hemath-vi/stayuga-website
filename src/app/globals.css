@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #EFE3D5;
+  --foreground: #281822;
+
+  --color-ink: #281822;        /* very dark plum */
+  --color-ink-soft: #957082;   /* muted mauve — captions, labels */
+  --color-forest: #48182E;     /* deep burgundy — primary / CTA */
+  --color-forest-light: #5f2a3e; /* hover state */
+  --color-gold: #C49C79;       /* warm tan — accent */
+  --color-gold-light: #D4B090; /* lighter tan — hover / highlight */
+  --color-cream: #EFE3D5;      /* light cream — page background */
+  --color-sand: #E5D5C2;       /* warm sand — card surfaces */
+  --color-line: #D9C9B5;       /* subtle borders */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ink: var(--color-ink);
+  --color-ink-soft: var(--color-ink-soft);
+  --color-forest: var(--color-forest);
+  --color-forest-light: var(--color-forest-light);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-cream: var(--color-cream);
+  --color-sand: var(--color-sand);
+  --color-line: var(--color-line);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+::selection {
+  background: var(--color-gold-light);
+  color: var(--color-ink);
+}
