@@ -50,7 +50,7 @@ export default function ServicesPage() {
           {SERVICES.map(({ icon: Icon, title, desc, image }) => (
             <div
               key={title}
-              className="group overflow-hidden rounded-2xl border border-line/70 bg-white"
+              className="group overflow-hidden border border-line/70 bg-white"
             >
               <div className="relative aspect-[16/9] overflow-hidden">
                 <Image

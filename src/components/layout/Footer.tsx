@@ -14,7 +14,7 @@ const NAV = [
 ];
 
 export async function Footer() {
-  const { blocks } = await getContent().catch(emptyContent);
+  const { blocks, policies } = await getContent().catch(emptyContent);
   const contact = blocks["contact-info"] ?? {
     email: "hello@stayuga.com",
     phone: "+91 00000 00000",
@@ -101,9 +101,22 @@ export async function Footer() {
       </div>
 
       <div className="border-t border-cream/5 px-6 py-6 sm:px-8 lg:px-12">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 text-xs text-cream/40 sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} Stayuga</p>
-          <p>Luxury villa &amp; farmhouse rentals</p>
+        <div className="mx-auto max-w-7xl space-y-4 text-xs text-cream/40">
+          {policies.length > 0 && (
+            <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
+              {policies.map((policy) => (
+                <li key={policy._id}>
+                  <Link href={`/policies/${policy.slug}`} className="hover:text-cream/70 transition-colors">
+                    {policy.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
+          <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
+            <p>&copy; {new Date().getFullYear()} Stayuga</p>
+            <p>Luxury villa &amp; farmhouse rentals</p>
+          </div>
         </div>
       </div>
     </footer>

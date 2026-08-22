@@ -5,7 +5,7 @@ export function CtaSection() {
   return (
     <section className="py-24">
       <Container>
-        <div className="rounded-3xl bg-sand px-8 py-16 text-center sm:px-16">
+        <div className="bg-sand px-8 py-16 text-center sm:px-16">
           <h2 className="font-display text-3xl text-ink sm:text-4xl">
             Ready to plan your escape?
           </h2>

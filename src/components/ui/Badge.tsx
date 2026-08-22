@@ -4,7 +4,7 @@ export function Badge({ children, className }: { children: string; className?: s
   return (
     <span
       className={clsx(
-        "inline-flex items-center rounded-full bg-sand px-3 py-1 text-xs font-medium uppercase tracking-wide text-ink-soft",
+        "inline-flex items-center bg-cream px-3 py-1 text-[10px] font-medium uppercase tracking-[0.15em] text-ink",
         className
       )}
     >

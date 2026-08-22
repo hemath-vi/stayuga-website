@@ -26,7 +26,7 @@ export default async function EventsPage() {
           </div>
         )}
 
-        <div className="mx-auto mt-20 max-w-2xl rounded-2xl border border-line/70 bg-white p-8">
+        <div className="mx-auto mt-20 max-w-2xl border border-line/70 bg-white p-8">
           <h2 className="font-display text-xl text-ink">Plan your event</h2>
           <p className="mt-2 text-sm text-ink-soft">
             Tell us the occasion and headcount, and we&apos;ll take it from there.

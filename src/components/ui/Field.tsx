@@ -2,7 +2,7 @@ import { InputHTMLAttributes, TextareaHTMLAttributes, SelectHTMLAttributes, Reac
 import clsx from "clsx";
 
 const fieldBase =
-  "w-full rounded-lg border border-line bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft/50 focus:border-forest focus:outline-none focus:ring-1 focus:ring-forest transition-colors";
+  "w-full border border-line bg-white px-4 py-2.5 text-sm text-ink placeholder:text-ink-soft/50 focus:border-forest focus:outline-none focus:ring-1 focus:ring-forest transition-colors";
 
 function FieldWrapper({
   label,

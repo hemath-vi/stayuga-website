@@ -17,7 +17,7 @@ export default async function FaqPage() {
       <Container className="max-w-3xl">
         <SectionHeading eyebrow="Support" title="Frequently asked questions" align="center" />
 
-        <div className="mt-12 divide-y divide-line/70 rounded-2xl border border-line/70 bg-white">
+        <div className="mt-12 divide-y divide-line/70 border border-line/70 bg-white">
           {faqs.map((faq) => (
             <details key={faq._id} className="group p-6">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-medium text-ink">

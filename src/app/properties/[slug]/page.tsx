@@ -80,7 +80,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
           </div>
 
           <div className="lg:col-span-1">
-            <div className="sticky top-24 rounded-2xl border border-line/70 bg-white p-6">
+            <div className="sticky top-24 border border-line/70 bg-white p-6">
               <div className="flex items-baseline justify-between border-b border-line/70 pb-4">
                 <span className="font-display text-2xl text-ink">
                   {formatPrice(property.pricing.basePrice, property.pricing.currency)}

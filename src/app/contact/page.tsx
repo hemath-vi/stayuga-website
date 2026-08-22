@@ -29,7 +29,7 @@ export default async function ContactPage() {
 
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-3">
           <div className="space-y-6 lg:col-span-1">
-            <div className="rounded-2xl border border-line/70 bg-white p-6">
+            <div className="border border-line/70 bg-white p-6">
               <div className="flex items-start gap-3">
                 <Mail size={18} className="mt-0.5 text-forest" />
                 <div>
@@ -54,7 +54,7 @@ export default async function ContactPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-line/70 bg-white p-8 lg:col-span-2">
+          <div className="border border-line/70 bg-white p-8 lg:col-span-2">
             <ContactForm />
           </div>
         </div>

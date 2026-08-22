@@ -50,7 +50,7 @@ export function PropertyFilters({ type, city, minGuests, checkIn, checkOut }: Pr
   }
 
   return (
-    <aside className="w-full rounded-2xl border border-line/70 bg-white p-5 space-y-6">
+    <aside className="w-full border border-line/70 bg-white p-5 space-y-6">
       {/* Header */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2 text-sm font-semibold text-ink">
@@ -79,13 +79,13 @@ export function PropertyFilters({ type, city, minGuests, checkIn, checkOut }: Pr
 
         {/* Selected dates summary */}
         <div className="mb-3 grid grid-cols-2 gap-2">
-          <div className="rounded-lg border border-line bg-sand/40 px-3 py-2">
+          <div className="border border-line bg-sand/40 px-3 py-2">
             <p className="text-[10px] font-medium text-ink-soft uppercase tracking-wide">Check-in</p>
             <p className="text-sm font-medium text-ink mt-0.5">
               {selCheckIn ? format(selCheckIn, "d MMM") : "—"}
             </p>
           </div>
-          <div className="rounded-lg border border-line bg-sand/40 px-3 py-2">
+          <div className="border border-line bg-sand/40 px-3 py-2">
             <p className="text-[10px] font-medium text-ink-soft uppercase tracking-wide">Check-out</p>
             <p className="text-sm font-medium text-ink mt-0.5">
               {selCheckOut ? format(selCheckOut, "d MMM") : "—"}
@@ -143,7 +143,7 @@ export function PropertyFilters({ type, city, minGuests, checkIn, checkOut }: Pr
           value={selCity}
           onChange={(e) => setSelCity(e.target.value)}
           placeholder="e.g. Kasauli"
-          className="w-full rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-ink-soft/50 focus:border-forest focus:outline-none focus:ring-1 focus:ring-forest transition-colors"
+          className="w-full border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-ink-soft/50 focus:border-forest focus:outline-none focus:ring-1 focus:ring-forest transition-colors"
         />
       </div>
 
@@ -160,7 +160,7 @@ export function PropertyFilters({ type, city, minGuests, checkIn, checkOut }: Pr
           value={selGuests}
           onChange={(e) => setSelGuests(e.target.value)}
           placeholder="e.g. 10"
-          className="w-full rounded-lg border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-ink-soft/50 focus:border-forest focus:outline-none focus:ring-1 focus:ring-forest transition-colors"
+          className="w-full border border-line bg-white px-3 py-2 text-sm text-ink placeholder:text-ink-soft/50 focus:border-forest focus:outline-none focus:ring-1 focus:ring-forest transition-colors"
         />
       </div>
 
@@ -168,7 +168,7 @@ export function PropertyFilters({ type, city, minGuests, checkIn, checkOut }: Pr
       <button
         type="button"
         onClick={apply}
-        className="w-full rounded-full bg-forest py-2.5 text-sm font-medium text-cream hover:bg-forest-light transition-colors"
+        className="w-full bg-forest py-2.5 text-xs font-medium uppercase tracking-[0.2em] text-cream hover:bg-forest-light transition-colors"
       >
         Apply filters
       </button>

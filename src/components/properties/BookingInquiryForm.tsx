@@ -87,7 +87,7 @@ export function BookingInquiryForm({
 
   if (status === "success") {
     return (
-      <div className="rounded-2xl border border-forest/20 bg-forest/5 p-6 text-center">
+      <div className="border border-forest/20 bg-forest/5 p-6 text-center">
         <p className="font-display text-lg text-forest">Enquiry sent</p>
         <p className="mt-2 text-sm text-ink-soft">
           Thank you. Our team will get back to you shortly to confirm availability.
@@ -157,7 +157,7 @@ export function BookingInquiryForm({
                     selected ? current.filter((s) => s !== service) : [...current, service]
                   );
                 }}
-                className={`flex items-center gap-2 rounded-full border px-4 py-2 text-sm transition-colors whitespace-nowrap ${
+                className={`flex items-center gap-2 border px-4 py-2 text-sm transition-colors whitespace-nowrap ${
                   selected
                     ? "border-forest bg-forest text-cream font-medium"
                     : "border-line text-ink hover:border-forest/60 bg-white"
@@ -181,7 +181,7 @@ export function BookingInquiryForm({
           href={whatsappHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 text-sm font-medium text-ink hover:border-ink"
+          className="inline-flex items-center gap-2 border border-line px-6 py-3 text-sm font-medium text-ink hover:border-ink"
         >
           <MessageCircle size={16} /> Ask on WhatsApp
         </a>

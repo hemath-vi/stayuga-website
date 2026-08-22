@@ -43,7 +43,7 @@ export default function RootLayout({
     <html lang="en" className={`${bodyFont.variable} ${displayFont.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-cream text-ink">
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pt-16 lg:pt-[72px]">{children}</main>
         <Footer />
         <WhatsAppButton />
       </body>

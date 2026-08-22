@@ -25,16 +25,15 @@ export default async function AboutPage() {
         <p className="mt-5 text-base leading-relaxed text-ink-soft">{mission.body}</p>
       </Container>
 
-      <Container className="mt-14">
-        <div className="relative aspect-[21/9] overflow-hidden rounded-2xl">
-          <Image
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop"
-            alt="A Stayuga villa interior"
-            fill
-            className="object-cover"
-          />
-        </div>
-      </Container>
+      <div className="relative mt-14 aspect-[21/9] w-full overflow-hidden sm:aspect-[2.4/1]">
+        <Image
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1920&auto=format&fit=crop"
+          alt="A Stayuga villa interior"
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+      </div>
 
       <div className="mt-8">
         <ValueProps />

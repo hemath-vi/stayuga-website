@@ -7,7 +7,7 @@ export function Gallery({ images, title }: { images: string[]; title: string }) 
 
   return (
     <div className="grid grid-cols-1 gap-2 sm:grid-cols-4 sm:gap-3">
-      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl sm:col-span-2 sm:row-span-2">
+      <div className="relative aspect-[16/10] overflow-hidden sm:col-span-2 sm:row-span-2">
         <Image
           src={main}
           alt={title}
@@ -18,7 +18,7 @@ export function Gallery({ images, title }: { images: string[]; title: string }) 
         />
       </div>
       {thumbs.map((src, i) => (
-        <div key={src + i} className="relative aspect-[16/10] overflow-hidden rounded-2xl">
+        <div key={src + i} className="relative aspect-[16/10] overflow-hidden">
           <Image
             src={src}
             alt={`${title} photo ${i + 2}`}

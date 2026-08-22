@@ -6,7 +6,7 @@ import { LinkButton } from "@/components/ui/Button";
 
 export function Hero({ heading, subheading }: { heading: string; subheading: string }) {
   return (
-    <section className="relative flex min-h-[85vh] items-end overflow-hidden">
+    <section className="relative -mt-16 flex min-h-[85vh] items-end overflow-hidden lg:-mt-[72px]">
       <Image
         src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2000"
         alt="A luxury villa surrounded by hills at golden hour"
@@ -14,7 +14,7 @@ export function Hero({ heading, subheading }: { heading: string; subheading: str
         priority
         className="object-cover"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/30 to-ink/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink/85 via-ink/25 to-ink/60" />
 
       <div className="relative w-full px-6 pb-20 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">
@@ -30,7 +30,7 @@ export function Hero({ heading, subheading }: { heading: string; subheading: str
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="max-w-3xl font-display text-4xl leading-tight text-cream sm:text-5xl lg:text-6xl"
+            className="max-w-4xl font-display text-4xl leading-tight text-cream sm:text-5xl"
           >
             {heading}
           </motion.h1>
