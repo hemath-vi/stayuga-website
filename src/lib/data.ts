@@ -1,0 +1,40 @@
+import { apiFetch } from "@/lib/api";
+import { ContentBlocks, FaqItem, PolicyPage, Property, Testimonial } from "@/lib/types";
+
+export async function getProperties(params?: Record<string, string>) {
+  const query = params ? `?${new URLSearchParams(params).toString()}` : "";
+  const { properties } = await apiFetch<{ properties: Property[] }>(`/api/properties${query}`);
+  return properties;
+}
+
+export async function getProperty(slug: string) {
+  const { property } = await apiFetch<{ property: Property }>(`/api/properties/${slug}`);
+  return property;
+}
+
+export async function getPropertyById(id: string, token: string) {
+  const { property } = await apiFetch<{ property: Property }>(`/api/properties/id/${id}`, {
+    token,
+  });
+  return property;
+}
+
+export async function getContent() {
+  return apiFetch<{ blocks: ContentBlocks; faqs: FaqItem[]; policies: PolicyPage[]; testimonials: Testimonial[] }>(
+    "/api/content"
+  );
+}
+
+export function emptyContent() {
+  return {
+    blocks: {} as ContentBlocks,
+    faqs: [] as FaqItem[],
+    policies: [] as PolicyPage[],
+    testimonials: [] as Testimonial[],
+  };
+}
+
+export async function getPolicy(slug: string) {
+  const { policy } = await apiFetch<{ policy: PolicyPage }>(`/api/content/policies/${slug}`);
+  return policy;
+}
