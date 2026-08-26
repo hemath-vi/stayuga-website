@@ -186,7 +186,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="lg:col-span-6 lg:justify-self-end">
+              <div className="flex justify-center lg:col-span-6 lg:justify-end">
               <div className="relative aspect-square w-full max-w-[500px] overflow-hidden">
                 <Image
                   src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?q=80&w=1000&auto=format&fit=crop"

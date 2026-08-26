@@ -97,7 +97,7 @@ const allStaysData = [
   },
 ];
 
-export default function PropertiesPage() {
+export default function stayPage() {
   const [selectedLocation, setSelectedLocation] = useState("all");
   const [selectedBeds, setSelectedBeds] = useState("all");
   const [petFriendlyOnly, setPetFriendlyOnly] = useState(false);
@@ -427,7 +427,7 @@ export default function PropertiesPage() {
           {filteredStays.map((stay) => (
             <Link
               key={stay.id}
-              href={`/properties/₹{stay.slug}`}
+              href={`/stay/₹{stay.slug}`}
               className="group flex flex-col bg-white rounded-lg border border-stone-200/70 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
               {/* Image & Badges */}
@@ -581,7 +581,7 @@ export default function PropertiesPage() {
               <polyline points="9 22 9 12 15 12 15 22" />
             </svg>
             <span className="text-xs tracking-wider text-stone-700">
-              Curated Properties
+              Curated stay
             </span>
           </div>
           <div className="flex items-center gap-4">

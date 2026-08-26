@@ -5,9 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { Menu, X, Phone, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
 import { NAV_ITEMS, isNavItemActive } from "@/lib/nav";
-import { CONCIERGE_TEL } from "@/lib/contact";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -39,7 +38,6 @@ export function Header() {
       if (e.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", onKey);
-    // move focus into the panel for screen-reader / keyboard users
     panelRef.current?.focus();
     return () => {
       document.body.style.overflow = prevOverflow;
@@ -60,7 +58,7 @@ export function Header() {
         ].join(" ")}
       >
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
-          {/* ---------- Brand ---------- */}
+          {/* Brand */}
           <Link href="/" className="group flex shrink-0 items-center" aria-label="Stayuga home">
             <Image
               src="/logo.svg"
@@ -72,7 +70,7 @@ export function Header() {
             />
           </Link>
 
-          {/* ---------- Desktop nav ---------- */}
+          {/* Desktop nav */}
           <nav className="hidden items-center gap-6 lg:flex xl:gap-8" aria-label="Primary">
             {NAV_ITEMS.map((item) => {
               const active = isNavItemActive(pathname, item);
@@ -105,29 +103,16 @@ export function Header() {
             })}
           </nav>
 
-          {/* ---------- Right side actions ---------- */}
+          {/* Right side action */}
           <div className="flex items-center gap-2">
-            {/*
-              Concierge line lives on the desktop bar only. On phones the
-              drawer keeps a single, unambiguous action (Reserve) — a second
-              CTA down there competed with it and pushed the nav list up.
-            */}
-            <a
-              href={`tel:${CONCIERGE_TEL}`}
-              className="hidden items-center gap-2 px-4 text-[11px] uppercase tracking-widest text-white/75 transition-colors hover:text-gold-light lg:inline-flex"
-            >
-              <Phone size={13} />
-              <span>Talk to Concierge</span>
-            </a>
-
             <Link
-              href="/stay"
+              href="/properties"
               className="hidden rounded-full border border-gold px-5 py-2 text-[11px] uppercase tracking-widest text-gold-light transition-all hover:bg-gold hover:text-ink-deep active:scale-95 sm:inline-flex sm:items-center xl:px-6 xl:text-xs"
             >
               Reserve
             </Link>
 
-            {/* Hamburger — phones + tablets */}
+            {/* Mobile Hamburger */}
             <button
               type="button"
               onClick={() => setOpen((v) => !v)}
@@ -164,7 +149,7 @@ export function Header() {
         </div>
       </header>
 
-      {/* ---------- Mobile / tablet drawer ---------- */}
+      {/* Drawer */}
       <AnimatePresence>
         {open && (
           <>
@@ -196,7 +181,6 @@ export function Header() {
                   : { type: "spring", stiffness: 340, damping: 36 }
               }
             >
-              {/* drawer header */}
               <div
                 className="flex items-center justify-between border-b border-white/10 px-5"
                 style={{ height: "var(--header-h)" }}
@@ -218,7 +202,6 @@ export function Header() {
                 </button>
               </div>
 
-              {/* drawer links */}
               <nav className="flex-1 overflow-y-auto px-3 py-4" aria-label="Mobile">
                 {NAV_ITEMS.map((item, i) => {
                   const active = isNavItemActive(pathname, item);
@@ -266,13 +249,12 @@ export function Header() {
                 })}
               </nav>
 
-              {/* drawer footer CTA */}
               <div
                 className="border-t border-white/10 px-5 pt-4"
                 style={{ paddingBottom: "calc(1rem + var(--safe-bottom))" }}
               >
                 <Link
-                  href="/stay"
+                  href="/properties"
                   onClick={() => setOpen(false)}
                   className="flex w-full items-center justify-center rounded-full bg-gold px-6 py-3 text-xs font-semibold uppercase tracking-widest text-ink-deep transition-transform active:scale-95"
                 >
